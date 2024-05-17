@@ -106,13 +106,16 @@
 
         $(document).ready(function () {
 
-            var scenarioTable = $('.scenario-result-table').DataTable({
+            $('.scenario-result-table').DataTable({
 
                 "order": [],
                 "language": {
                     searchPlaceholder: "Filter",
                     search: ""
-                }
+                },
+                columnDefs: [
+                    {type: 'time-elapsed-dhms', targets: 4}
+                ]
             });
 
             $('.example-table table').DataTable({
@@ -177,7 +180,7 @@
         <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
         <div id="projectname-banner" style="float:right">
             <span class="projectname">
-                <span class="projecttitle"></span>
+                <span class="projecttitle">Serenity BDD Report</span>
                 <span class="projectsubtitle"></span>
             </span>
         </div>
@@ -336,7 +339,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-12">
-                    <span class="version">Serenity BDD version 3.2.5</span>
+                    <span class="version">Serenity BDD version 3.4.2</span>
                 </div>
             </div>
         </div>
@@ -351,17 +354,17 @@
 
         // Options define for display value on top of bars
         const outcomeDetailsReports = [
-            { title: 'Passing Scenarios', link: "b19225ca935d33bc7d1dda2618b4bb2f387c3f2f009d04f5ffcfc37a2416f0e5.html" },
-            { title: 'Pending Scenarios', link: "64f3bcdcfd94ee925e436c6128422594de1975dd325b86dd3705cd7f8e5b4bd3.html" },
-            { title: 'Ignored Scenarios', link: "1f124580aa521e19be959a9baafe0fb4f6fd4c0a29e27d1ed1497efe440c47a8.html" },
-            { title: 'Skipped Scenarios', link: "74f299f2ca7e2658bdd3ef884661436b0e96b3e3cfe1e1dbedf8a2261167299e.html" },
-            { title: 'Aborted Scenarios',  link: "88303efd1dd3ea413cef944fdae8a96b9be427351f1acd68e030e571e27e564a.html"},
-            { title: 'Failed Scenarios', link: "5d1b628042df442bf9a480a7ea556d7d5523c1ba12937f4b5aa52e93f68a1c1f.html"  },
-            { title: 'Broken Scenarios', link: "9559c711e0f7be29d6db236e34cedaedc2158ee9353642c4f1dea08ff2ca7b77.html"    },
-            { title: 'Compromised Scenarios',  link: "3286ec633f89497c6ea42dce0700c1dd865eb4dae6637db5ab6d0cc5bbbcc3f5.html" },
+            { title: 'Passing Test Cases', link: "b19225ca935d33bc7d1dda2618b4bb2f387c3f2f009d04f5ffcfc37a2416f0e5.html" },
+            { title: 'Pending Test Cases', link: "64f3bcdcfd94ee925e436c6128422594de1975dd325b86dd3705cd7f8e5b4bd3.html" },
+            { title: 'Ignored Test Cases', link: "1f124580aa521e19be959a9baafe0fb4f6fd4c0a29e27d1ed1497efe440c47a8.html" },
+            { title: 'Skipped Test Cases', link: "74f299f2ca7e2658bdd3ef884661436b0e96b3e3cfe1e1dbedf8a2261167299e.html" },
+            { title: 'Aborted Test Cases',  link: "88303efd1dd3ea413cef944fdae8a96b9be427351f1acd68e030e571e27e564a.html"},
+            { title: 'Failed Test Cases', link: "5d1b628042df442bf9a480a7ea556d7d5523c1ba12937f4b5aa52e93f68a1c1f.html"  },
+            { title: 'Broken Test Cases', link: "9559c711e0f7be29d6db236e34cedaedc2158ee9353642c4f1dea08ff2ca7b77.html"    },
+            { title: 'Compromised Test Cases',  link: "3286ec633f89497c6ea42dce0700c1dd865eb4dae6637db5ab6d0cc5bbbcc3f5.html" },
         ]
         const outcomeData = {
-            labels: ['Passing Scenarios', 'Pending Scenarios', 'Ignored Scenarios', 'Skipped Scenarios', 'Aborted Scenarios', 'Failed Scenarios', 'Broken Scenarios', 'Compromised Scenarios','Undefined Scenarios'],
+            labels: ['Passing Test Cases', 'Pending Test Cases', 'Ignored Test Cases', 'Skipped Test Cases', 'Aborted Test Cases', 'Failed Test Cases', 'Broken Test Cases', 'Compromised Test Cases','Undefined Test Cases'],
             datasets: [{
                 label: 'Test Results',
                 fill: false,
@@ -445,18 +448,18 @@
 
         // Options define for display value on top of bars
         const requirementsOutcomeDetailsReports = [
-            { title: 'Passing Scenarios', link: "b19225ca935d33bc7d1dda2618b4bb2f387c3f2f009d04f5ffcfc37a2416f0e5.html" },
-            { title: 'Pending Scenarios', link: "64f3bcdcfd94ee925e436c6128422594de1975dd325b86dd3705cd7f8e5b4bd3.html" },
-            { title: 'Ignored Scenarios', link: "1f124580aa521e19be959a9baafe0fb4f6fd4c0a29e27d1ed1497efe440c47a8.html" },
-            { title: 'Skipped Scenarios', link: "74f299f2ca7e2658bdd3ef884661436b0e96b3e3cfe1e1dbedf8a2261167299e.html" },
-            { title: 'Aborted Scenarios',  link: "88303efd1dd3ea413cef944fdae8a96b9be427351f1acd68e030e571e27e564a.html"},
-            { title: 'Failed Scenarios', link: "5d1b628042df442bf9a480a7ea556d7d5523c1ba12937f4b5aa52e93f68a1c1f.html"  },
-            { title: 'Broken Scenarios', link: "9559c711e0f7be29d6db236e34cedaedc2158ee9353642c4f1dea08ff2ca7b77.html"    },
-            { title: 'Compromised Scenarios',  link: "3286ec633f89497c6ea42dce0700c1dd865eb4dae6637db5ab6d0cc5bbbcc3f5.html" },
-            { title: 'Undefined Scenarios',  link: "" },
+            { title: 'Passing Test Cases', link: "b19225ca935d33bc7d1dda2618b4bb2f387c3f2f009d04f5ffcfc37a2416f0e5.html" },
+            { title: 'Pending Test Cases', link: "64f3bcdcfd94ee925e436c6128422594de1975dd325b86dd3705cd7f8e5b4bd3.html" },
+            { title: 'Ignored Test Cases', link: "1f124580aa521e19be959a9baafe0fb4f6fd4c0a29e27d1ed1497efe440c47a8.html" },
+            { title: 'Skipped Test Cases', link: "74f299f2ca7e2658bdd3ef884661436b0e96b3e3cfe1e1dbedf8a2261167299e.html" },
+            { title: 'Aborted Test Cases',  link: "88303efd1dd3ea413cef944fdae8a96b9be427351f1acd68e030e571e27e564a.html"},
+            { title: 'Failed Test Cases', link: "5d1b628042df442bf9a480a7ea556d7d5523c1ba12937f4b5aa52e93f68a1c1f.html"  },
+            { title: 'Broken Test Cases', link: "9559c711e0f7be29d6db236e34cedaedc2158ee9353642c4f1dea08ff2ca7b77.html"    },
+            { title: 'Compromised Test Cases',  link: "3286ec633f89497c6ea42dce0700c1dd865eb4dae6637db5ab6d0cc5bbbcc3f5.html" },
+            { title: 'Undefined Test Cases',  link: "" },
         ]
         const requirementsOutcomeData = {
-            labels: ['Passing Scenarios', 'Pending Scenarios', 'Ignored Scenarios', 'Skipped Scenarios', 'Aborted Scenarios', 'Failed Scenarios', 'Broken Scenarios', 'Compromised Scenarios','Undefined Scenarios'],
+            labels: ['Passing Test Cases', 'Pending Test Cases', 'Ignored Test Cases', 'Skipped Test Cases', 'Aborted Test Cases', 'Failed Test Cases', 'Broken Test Cases', 'Compromised Test Cases','Undefined Test Cases'],
             datasets: [{
                 label: 'Feature Coverage',
                 fill: false,

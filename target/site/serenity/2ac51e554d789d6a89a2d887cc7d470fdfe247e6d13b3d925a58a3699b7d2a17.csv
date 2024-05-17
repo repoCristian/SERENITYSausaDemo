@@ -1,2 +1,3 @@
 "Story","Title","Result","Date","Stability","Duration (s)"
 "cart","check the car functions","SUCCESS","2024-03-20T09:32:14.26551009-05:00[America/Bogota]","0.0","3.42"
+"login","insert user info","SUCCESS","2024-05-17T12:03:06.0661201-05:00[America/Bogota]","0.0","26.3"
