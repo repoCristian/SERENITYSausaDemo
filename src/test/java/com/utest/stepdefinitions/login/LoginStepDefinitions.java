@@ -34,5 +34,6 @@ public class LoginStepDefinitions {
     @Then("user should see error mesage")
     public void thenUserShouldSeeErrorMesage(){
         theActorInTheSpotlight().should(seeThat(ErrorVisibleQuestions.succesRegister()));
+        //
     }
 }
